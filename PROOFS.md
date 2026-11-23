@@ -80,7 +80,8 @@ as there are finitely many closed tetrahedra, one of them, T′, contains q. T�
 strictly on the side of T: otherwise the segment from q to r would lie in T′ and enter the
 interior of T, and T′, T would have a common interior point. So T′ lies in the closed half-space
 opposite to T, and meets the plane of φ in a face, an edge or a vertex. Edges and vertices of
-the finitely many tetrahedra have area zero in the plane. ∎
+the finitely many tetrahedra have area zero in the plane: if q lies on no edge of any
+tetrahedron, T′ meets the plane in a face containing q. ∎
 
 The covering faces may extend beyond φ when the dissection is not face-to-face; only the
 covering property is used. Two covering faces of the same φ cannot overlap in positive area
@@ -221,7 +222,8 @@ ADE, BDE, so the rest R = conv(O, A, B, D, E) of the cube is tiled by T_x = ABEp
 T_y = ADEp_y, T_z = BDEp_z and one tetrahedron T₀ with b = 0. The inner faces of the three
 corner tetrahedra are L_a = OAB, L_b = OAD, L_c = OBD. By Lemma 8, each triangle L = Oe₁e₂ among
 them is tiled by the face e₁e₂p of the corresponding T (if p lies in the plane) and at most one
-face of T₀. So for each L:
+face of T₀. (No other face τ occurs: by Lemma 8.3, for L_a the half-square would be ABE, or the
+one on OA or OB, which belongs to a corner tetrahedron; likewise for L_b and L_c.) So for each L:
 
 - (a) p = O, and the corresponding T has volume 1/6; or
 - (b) T₀ has a face in the plane of L, equal to L or to a triangle Ope with p on an edge of L
@@ -345,7 +347,8 @@ the face is not covered (p₁ ≠ b). Excluded.
 R = conv(O, A, B, D, E) is tiled by T_x = ABEp_x, T_y = ADEp_y, T_z = BDEp_z and two tetrahedra
 S₁, S₂ with b = 0, all five of volume in ]1/12, 1/6[. By Lemma 8, each of L_a, L_b, L_c is tiled
 by at most one face τ of the corresponding T (τ_x = ABp_x in L_a, and so on), covering more than
-half of it, and by faces of S₁ and S₂.
+half of it, and by faces of S₁ and S₂. (As in Theorem 2, no other face τ occurs: by Lemma 8.3 the
+half-square would be ABE, or the one on OA or OB, which belongs to a corner tetrahedron.)
 
 O is an extreme point of R, so a tetrahedron of the tiling of R containing O has O as a vertex.
 It is not T_x, T_y or T_z (p_x = O would give vol(T_x) = 1/6). So S₁ or S₂ has the vertex O.
@@ -361,7 +364,8 @@ covered by S₁ is empty or a single triangle τ; for L_a this means u = A or v 
 for the others.
 
 I.0. S₂ has a face in none of the planes. Then (u = A or v = B), (u = A or w = D),
-(v = B or w = D): two of the σ equal 1, say u = A and v = B. Then p_y = p_z = w and
+(v = B or w = D): two of the σ equal 1, say u = A and v = B. Then w ≠ D, since σ_w < 1/2
+(the product is < 1/2), so p_y = p_z = w and
 vol(S₁) + vol(T_y) + vol(T_z) = σ_w/3 + 2(1 − σ_w)/6 = 1/3. As vol(R) = 1/2,
 vol(T_x) + vol(S₂) = 1/6: one of them is ≤ 1/12. Excluded.
 
@@ -373,8 +377,9 @@ I.1. S₂ has a face in exactly one of the planes, say L_a. Then (u = A or w = D
   symmetry y ↔ z, which exchanges A and B and preserves L_a, say u = A; then v ≠ B, since
   vol(S₁) < 1/3. So S₁ = OAvD. The plane of its face AvD is x + (2σ_v − 1)y + z = 2σ_v; it leaves
   O on one side and B, E strictly on the other, so the section of R by this plane is the
-  triangle AvD itself. By Lemma 5 this triangle is tiled by faces of tetrahedra lying on the
-  other side: T_x and T_z have at most two vertices in the plane, so these faces belong to T_y
+  triangle AvD itself. Its relative interior lies in the interior of R, so the tetrahedra
+  covering it are among T_x, T_y, T_z, S₂ (the corner tetrahedra lie outside R). By Lemma 5 this
+  triangle is tiled by faces of tetrahedra lying on the other side: T_x and T_z have at most two vertices in the plane, so these faces belong to T_y
   (a face ADp_y) and S₂. If T_y alone covered it, then p_y = v and vol(T_y) = (1 − y(v))/6 = 1/6:
   excluded. So S₂ has a face χ in this plane, and AvD is χ, or χ together with ADp_y; in each
   case χ has the vertex v and another vertex on the segment vD (namely D or p_y). Likewise, in
@@ -416,7 +421,9 @@ In L_c, the faces Ovx₁ of S₁ and Ox₂w of S₂, and possibly τ_z = BDp_z, 
 segment x₁x₂ would lie in an edge of τ_z; but the edges of τ_z are BD and two segments from B
 and from D, and none of them lies on a line through O interior to the angle BOD. So
 x₁ = x₂ = x, and the complement of Ovx ∪ Oxw in L_c is the polygon vBDwx, which must be empty
-or a triangle with side BD: either (v = B and w = D), or (w = D and x on vD), or
+or a triangle with side BD (namely τ_z). If v ≠ B the third vertex of this triangle must be v,
+and if w ≠ D it must be w, so not both; if v ≠ B then D, x, v are collinear, and if w ≠ D then
+B, x, w are collinear. So either (v = B and w = D), or (w = D and x on vD), or
 (v = B and x on Bw).
 
 *u₁ = u₂.* Suppose not, say u₁ closer to O than u₂ (the other case is symmetric). The triangle
@@ -461,7 +468,7 @@ which is 1/21, 1/32, 1/54, 1/120 for m = 8, 9, 10, 11. If some volume is ≥ 1/6
 So for m = 8, 9, 10 the record 1/12 is the exact value if and only if no dissection has all its
 volumes in an interval of length < 1/12, which would have to be contained in ]0, 1/6[.
 
-**Conjecture.** Every dissection of the cube into at most 10 tetrahedra contains a tetrahedron
+**Conjecture.** Every dissection of the cube into 8, 9 or 10 tetrahedra contains a tetrahedron
 of volume ≥ 1/6. With Corollary 4 this would give Δ₃(8) = Δ₃(9) = Δ₃(10) = 1/12.
 
 ## Upper bounds
@@ -480,7 +487,7 @@ The dissections of `data/` are checked exactly by `verify.py`. Their structure:
 - **Prisms.** If the unit square is cut into n triangles of areas a₁, …, a_n, the prism over the
   triangle of area aᵢ has volume aᵢ and is cut into 3 tetrahedra of volume aᵢ/3 (a triangular
   prism PQR P′Q′R′ is the union of PQRR′, PQQ′R′ and PP′Q′R′). So Δ₃(3n) ≤ Δ₂(n)/3. With
-  Δ₂(5) = (5√5 − 11)/8 (M. Li, 2026, preprint) this gives Δ₃(15) ≤ (5√5 − 11)/24 ≈
+  Δ₂(5) = (5√5 − 11)/8 (M. Li, arXiv:2609.22693, preprint) this gives Δ₃(15) ≤ (5√5 − 11)/24 ≈
   0.00751416197912. The file `data/m15.json` is a different dissection, with rational
   coordinates, found independently by the optimisation; its range exceeds this value by less
   than 2 × 10⁻¹⁶, and it is the one that `verify.py` certifies (Δ₃(15) ≤ 0.0075141620).

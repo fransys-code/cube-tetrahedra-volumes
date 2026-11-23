@@ -24,7 +24,7 @@ of the *quantitative Monsky problem* for the square cut into an odd number of tr
 
 The lower bounds for m = 8 to 11 come from a theorem: **every dissection of the cube into 8, 9, 10
 or 11 tetrahedra contains a tetrahedron of volume at most 1/12** (although the average volume 1/m
-is larger). We conjecture that every dissection into at most 10 tetrahedra contains a tetrahedron
+is larger). We conjecture that every dissection into 8, 9 or 10 tetrahedra contains a tetrahedron
 of volume at least 1/6; this would give Δ₃(8) = Δ₃(9) = Δ₃(10) = 1/12. More generally
 Δ₃(3n) ≤ Δ₂(n)/3 (prisms over a dissection of the square into n triangles).
 
